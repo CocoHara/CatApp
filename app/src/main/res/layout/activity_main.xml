@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/catImage"
         android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_height="525dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
@@ -23,11 +23,11 @@
 
     <Button
         android:id="@+id/previous_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="98dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:onClick="previousImage"
         android:text="@string/button_previous"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,11 +35,11 @@
 
     <Button
         android:id="@+id/next_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:onClick="nextImage"
         android:text="@string/button_next"
         android:visibility="visible"
@@ -48,16 +48,17 @@
 
     <Button
         android:id="@+id/exit_app_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:onClick="exitApp"
         android:text="@string/button_close_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/next_button"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toEndOf="@+id/previous_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
