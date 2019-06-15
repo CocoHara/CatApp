@@ -7,58 +7,123 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/catImage"
-        android:layout_width="350dp"
-        android:layout_height="525dp"
+        android:id="@+id/catImage6"
+        android:layout_width="109dp"
+        android:layout_height="165dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:clickable="true"
+        android:onClick="imageClick"
+        android:src="@drawable/cat1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/catImage5"
+        app:layout_constraintTop_toBottomOf="@+id/catImage3"
+        app:srcCompat="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/catImage5"
+        android:layout_width="109dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:clickable="true"
+        android:onClick="imageClick"
+        android:src="@drawable/cat1"
+        app:layout_constraintEnd_toStartOf="@+id/catImage6"
+        app:layout_constraintStart_toEndOf="@+id/catImage4"
+        app:layout_constraintTop_toBottomOf="@+id/catImage2"
+        app:srcCompat="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/catImage4"
+        android:layout_width="109dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        android:onClick="imageClick"
+        android:src="@drawable/cat1"
+        app:layout_constraintEnd_toStartOf="@+id/catImage5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catImage1"
+        app:srcCompat="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/catImage3"
+        android:layout_width="109dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:onClick="imageClick"
+        android:src="@drawable/cat1"
+        app:layout_constraintBottom_toTopOf="@+id/catImage6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toEndOf="@+id/catImage2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/catImage2"
+        android:layout_width="109dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:onClick="imageClick"
+        android:src="@drawable/cat1"
+        app:layout_constraintBottom_toTopOf="@+id/catImage5"
+        app:layout_constraintEnd_toStartOf="@+id/catImage3"
+        app:layout_constraintStart_toEndOf="@+id/catImage1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/catImage1"
+        android:layout_width="109dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:onClick="imageClick"
+        android:src="@drawable/cat1"
+        app:layout_constraintBottom_toTopOf="@+id/catImage4"
+        app:layout_constraintEnd_toStartOf="@+id/catImage2"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/Cats" />
+        app:srcCompat="@android:color/background_light" />
 
     <Button
-        android:id="@+id/previous_button"
-        android:layout_width="98dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="4dp"
-        android:onClick="previousImage"
-        android:text="@string/button_previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="93dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="4dp"
-        android:onClick="nextImage"
-        android:text="@string/button_next"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/exit_app_button"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="4dp"
+        android:id="@+id/button"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:onClick="exitApp"
         android:text="@string/button_close_app"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/next_button"
-        app:layout_constraintHorizontal_bias="0.592"
-        app:layout_constraintStart_toEndOf="@+id/previous_button" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

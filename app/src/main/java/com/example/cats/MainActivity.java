@@ -2,65 +2,42 @@ package com.example.cats;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity
 {
-    List<String> cats = new ArrayList<String>();
-    private int imageIndex = 0;
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
+    //@Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        cats.add("cat1");
-        cats.add("cat2");
-        cats.add("cat3");
-        cats.add("cat4");
-        cats.add("cat5");
-
-        ImageView catImage = (ImageView) findViewById(R.id.catImage);
-
-        int imageResource = getResources().getIdentifier("@drawable/"+cats.get(0), null, this.getPackageName());
-        catImage.setImageResource(imageResource);
+        displayImages();
     }
 
-    public void nextImage(View view)
+    private void displayImages()
     {
-        imageIndex++;
-        ImageView catImage = (ImageView) findViewById(R.id.catImage);
+        for (int i=0; i<6; i++) {
+            String imageID = "catImage" + (i + 1);
+            int catImageID = getResources().getIdentifier(imageID, "id", getPackageName());
+            ImageView catImage = (ImageView) findViewById(catImageID);
 
-        if (imageIndex < cats.size()) {
-            int imageResource = getResources().getIdentifier("@drawable/"+cats.get(imageIndex), null, this.getPackageName());
+            String drawableCatImage = "@drawable/cat" + (i + 1);
+            int imageResource = getResources().getIdentifier(drawableCatImage, null, this.getPackageName());
             catImage.setImageResource(imageResource);
-        }
-        else {
-            imageIndex = 0;
-            int imageResource = getResources().getIdentifier("@drawable/"+cats.get(imageIndex), null, this.getPackageName());
-            catImage.setImageResource(imageResource);
+            catImage.setContentDescription(Integer.toString(i));
         }
     }
 
-    public void previousImage(View view)
+    public void imageClick (View view)
     {
-        imageIndex--;
-        ImageView catImage = (ImageView) findViewById(R.id.catImage);
-
-        if (imageIndex > 0) {
-            int imageResource = getResources().getIdentifier("@drawable/"+cats.get(imageIndex), null, this.getPackageName());
-            catImage.setImageResource(imageResource);
-        }
-        else {
-            imageIndex = 0;
-            int imageResource = getResources().getIdentifier("@drawable/"+cats.get(imageIndex), null, this.getPackageName());
-            catImage.setImageResource(imageResource);
-        }
+        Intent intent = new Intent (this, IndividualImageActivity.class);
+        String message = view.getContentDescription().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 
     public void exitApp (View view)
